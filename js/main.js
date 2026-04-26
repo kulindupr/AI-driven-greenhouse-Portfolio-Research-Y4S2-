@@ -26,3 +26,45 @@ themeToggleBtn.addEventListener('click', function () {
         themeIcon.classList.add('ph-sun');
     }
 });
+
+// App Screenshots Carousel Logic
+const screenshots = [
+    "images/AppUi/Home.jpeg",
+    "images/AppUi/Climate-control-screen.jpeg",
+    "images/AppUi/Diseases-detection-screen.jpeg",
+    "images/AppUi/Soil-health-screen.jpeg",
+    "images/AppUi/Monitor-tab.jpeg",
+    "images/AppUi/Control-tab.jpeg",
+    "images/AppUi/Alerts-tab.jpeg"
+];
+
+let currentIdx = 0;
+const leftImg = document.getElementById('screenshot-left');
+const centerImg = document.getElementById('screenshot-center');
+const rightImg = document.getElementById('screenshot-right');
+const btnPrev = document.getElementById('btn-prev-screenshot');
+const btnNext = document.getElementById('btn-next-screenshot');
+
+if (leftImg && centerImg && rightImg && btnPrev && btnNext) {
+    function updateCarousel() {
+        const prevIdx = (currentIdx - 1 + screenshots.length) % screenshots.length;
+        const nextIdx = (currentIdx + 1) % screenshots.length;
+        
+        leftImg.src = screenshots[prevIdx];
+        centerImg.src = screenshots[currentIdx];
+        rightImg.src = screenshots[nextIdx];
+    }
+
+    btnPrev.addEventListener('click', () => {
+        currentIdx = (currentIdx - 1 + screenshots.length) % screenshots.length;
+        updateCarousel();
+    });
+
+    btnNext.addEventListener('click', () => {
+        currentIdx = (currentIdx + 1) % screenshots.length;
+        updateCarousel();
+    });
+
+    // Initialize
+    updateCarousel();
+}
