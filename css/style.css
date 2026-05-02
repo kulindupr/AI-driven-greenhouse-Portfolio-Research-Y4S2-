@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* Base Styles */
 :root {
   --color-primary: #10b981;
@@ -53,6 +55,11 @@ html.dark {
   /* indigo-400 */
 }
 
+/* smooth scrolling for anchor navigation */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -60,12 +67,19 @@ html.dark {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--bg-body);
   color: var(--text-base);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: 'Poppins', sans-serif;
 }
 
 ::selection {
@@ -141,12 +155,31 @@ button {
 /* Components */
 /* Navbar */
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
   background-color: transparent;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+/* Glassmorphism state activated on scroll */
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+html.dark .header.scrolled {
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 .navbar {
@@ -154,6 +187,12 @@ button {
   justify-content: space-between;
   align-items: center;
   height: 6rem;
+  transition: height 0.4s ease;
+}
+
+/* Reduce height when sticky glass nav is active */
+.header.scrolled .navbar {
+  height: 4rem;
 }
 
 .logo {
@@ -181,6 +220,7 @@ button {
   display: none;
   align-items: center;
   gap: 2.5rem;
+  margin-left: auto;
 }
 
 @media (min-width: 1024px) {
@@ -210,12 +250,59 @@ button {
   align-items: center;
   gap: 0.25rem;
   cursor: pointer;
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  /* gap between the trigger link and the dropdown popup */
+  top: calc(100% + 10px);
+  left: 0.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  min-width: 170px;
+  box-shadow: var(--shadow-card);
+  margin-top: 0;
+  z-index: 40;
+}
+
+/* open on hover or when an element inside receives focus (keyboard access) */
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: flex;
+}
+
+/* Invisible bridge that fills the 10px gap so the menu stays open
+   as the mouse travels from the trigger down to the dropdown */
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.nav-dropdown-menu .nav-link {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.nav-dropdown-menu .nav-link:hover {
+  color: var(--color-primary);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  margin-left: 2rem;
 }
 
 .btn-toggle-theme {
@@ -241,7 +328,8 @@ button {
 /* Hero Section */
 .hero {
   position: relative;
-  padding-top: 5rem;
+  padding-top: 3.5rem;
+  /* reduced to nudge hero upward */
   padding-bottom: 4rem;
   min-height: 80vh;
   display: flex;
@@ -250,8 +338,23 @@ button {
 
 @media (min-width: 1024px) {
   .hero {
-    padding-top: 7rem;
+    padding-top: 5.5rem;
+    /* reduced for large screens */
     padding-bottom: 8rem;
+  }
+}
+
+/* Compact Hero for Secondary Pages */
+.hero-compact {
+  min-height: auto !important;
+  padding-top: 6rem !important;
+  padding-bottom: 2rem !important;
+}
+
+@media (min-width: 1024px) {
+  .hero-compact {
+    padding-top: 8rem !important;
+    padding-bottom: 2rem !important;
   }
 }
 
@@ -288,7 +391,7 @@ button {
 .hero-title {
   font-size: 2.25rem;
   letter-spacing: -0.025em;
-  font-weight: 800;
+  font-weight: 650;
   color: var(--text-heading);
   line-height: 1.15;
   margin-bottom: 1.5rem;
@@ -302,7 +405,7 @@ button {
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 64px;
+    font-size: 60px;
   }
 }
 
@@ -364,7 +467,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.625rem;
-  padding: 0.875rem 2rem;
+  padding: 0.675rem 2rem;
   font-size: 15px;
   font-weight: 600;
   border-radius: 0.5rem;
@@ -408,17 +511,24 @@ html.dark .btn-download:hover {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
+  /* horizontal padding to match download button spacing */
   border-radius: 0.5rem;
   transition: background-color 0.3s;
   width: 100%;
   cursor: pointer;
+  border: 2px solid var(--text-heading);
+  /* light-mode border matches download background */
+  min-height: 44px;
+  /* match visual height of .btn-download */
 }
 
 @media (min-width: 640px) {
   .btn-demo {
     width: auto;
     justify-content: flex-start;
+    min-width: 220px;
+    /* increase width on larger screens to better match download button */
   }
 }
 
@@ -434,8 +544,8 @@ html.dark .btn-demo:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 2px solid var(--bg-card-border);
   background-color: var(--bg-body);
@@ -448,6 +558,11 @@ html.dark .btn-demo:hover {
 }
 
 html.dark .btn-demo:hover .demo-icon {
+  border-color: #ffffff;
+}
+
+/* Dark-mode: make the btn-demo border white */
+html.dark .btn-demo {
   border-color: #ffffff;
 }
 
@@ -471,6 +586,37 @@ html.dark .btn-demo:hover .demo-icon {
   font-weight: 500;
 }
 
+/* Download button text (main + small subtext) */
+.download-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.download-text-main {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--bg-body);
+  line-height: 1.1;
+}
+
+.download-text-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  margin-top: 0.125rem;
+  opacity: 0.95;
+}
+
+/* Dark mode: make subtext readable on white download background */
+html.dark .download-text-main {
+  color: #0f172a;
+}
+
+html.dark .download-text-sub {
+  color: rgba(15, 23, 42, 0.8);
+}
+
 /* Images & Decors */
 .hero-image-wrap {
   position: relative;
@@ -489,11 +635,20 @@ html.dark .btn-demo:hover .demo-icon {
   .hero-image-container {
     max-width: 600px;
   }
+
+  .hero-compact .hero-image-container {
+    max-width: 450px;
+    /* Smaller image on secondary pages */
+  }
 }
 
 @media (min-width: 1280px) {
   .hero-image-container {
     max-width: 650px;
+  }
+
+  .hero-compact .hero-image-container {
+    max-width: 500px;
   }
 }
 
@@ -1040,7 +1195,7 @@ html.dark .how-it-works-card {
   transition: all 0.5s ease-in-out;
   border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   background-color: var(--bg-card);
 }
 
@@ -1092,7 +1247,10 @@ html.dark .how-it-works-card {
 .active-item::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-radius: 1.5rem;
   box-shadow: inset 0 0 0 2px #000;
   pointer-events: none;
@@ -1302,7 +1460,8 @@ html.dark .contact-card {
   width: 100%;
 }
 
-.form-input, .form-textarea {
+.form-input,
+.form-textarea {
   width: 100%;
   padding: 1rem 1.5rem;
   background-color: #ffffff;
@@ -1314,15 +1473,18 @@ html.dark .contact-card {
   transition: border-color 0.3s;
 }
 
-html.dark .form-input, html.dark .form-textarea {
+html.dark .form-input,
+html.dark .form-textarea {
   background-color: rgba(15, 23, 42, 0.6);
 }
 
-.form-input:focus, .form-textarea:focus {
+.form-input:focus,
+.form-textarea:focus {
   border-color: var(--color-purple);
 }
 
-.form-input::placeholder, .form-textarea::placeholder {
+.form-input::placeholder,
+.form-textarea::placeholder {
   color: var(--text-muted);
   opacity: 0.7;
 }
@@ -1409,7 +1571,7 @@ html.dark .footer-top {
 
 .footer-bottom {
   background-color: var(--color-purple);
-  padding: 1.5rem 0;
+  padding: 0.75rem 0;
   color: #ffffff;
   position: relative;
 }
@@ -1460,29 +1622,40 @@ html.dark .footer-top {
 }
 
 .scroll-top {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  bottom: 2rem;
   right: 2rem;
-  transform: translateY(-50%);
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-primary);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 1.25rem;
-  transition: background-color 0.3s;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .scroll-top:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  filter: brightness(1.1);
+  transform: translateY(-3px);
+  color: #ffffff;
 }
 
 @media (max-width: 1023px) {
   .scroll-top {
-    display: none;
+    bottom: 1rem;
+    right: 1rem;
   }
 }
 

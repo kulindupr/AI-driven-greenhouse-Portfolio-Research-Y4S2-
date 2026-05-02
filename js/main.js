@@ -69,6 +69,24 @@ if (leftImg && centerImg && rightImg && btnPrev && btnNext) {
     updateCarousel();
 }
 
+// Sticky Navbar Glass Effect
+const header = document.querySelector('.header');
+
+function handleNavbarScroll() {
+    if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+}
+
+// Run on load in case the page is already scrolled (e.g. after refresh)
+handleNavbarScroll();
+
+window.addEventListener('scroll', () => {
+    requestAnimationFrame(handleNavbarScroll);
+}, { passive: true });
+
 // FAQ Accordion Logic
 const faqItems = document.querySelectorAll('.faq-item');
 
@@ -88,3 +106,15 @@ faqItems.forEach(item => {
         }
     });
 });
+
+// Scroll to top button visibility logic
+const scrollTopBtn = document.querySelector('.scroll-top');
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    }, { passive: true });
+}

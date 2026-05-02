@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Scope - Lavender AI</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Phosphor Icons for precise modern icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <!-- Logo -->
+                <div class="logo">
+                    <span class="logo-text">Lavender AI</span>
+                    <div>
+                        <img src="images/logo-icon.png" alt="Lavender AI Logo">
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link nav-link-main">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="project-scope.html" class="nav-link">Project Scope</a>
+                        <i class="ph-bold ph-caret-down" style="font-size: 0.875rem; margin-top: 0.125rem;"></i>
+                        <div class="nav-dropdown-menu">
+                            <a href="#" class="nav-link">Literature Survey</a>
+                            <a href="#" class="nav-link">Research Gap</a>
+                            <a href="#" class="nav-link">Research Objectives</a>
+                            <a href="#" class="nav-link">Methodology</a>
+                            <a href="#" class="nav-link">Technologies</a>
+                        </div>
+                    </div>
+                    <a href="milestones.html" class="nav-link">Milestones</a>
+                    <a href="downloads.html" class="nav-link">Downloads</a>
+                    <a href="about-us.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="nav-actions">
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="darkModeToggle" class="btn-toggle-theme" aria-label="Toggle Dark Mode">
+                        <i id="themeIcon" class="ph ph-moon" style="font-size: 22px;"></i>
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button class="btn-mobile-menu">
+                        <i class="ph ph-list" style="font-size: 24px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero hero-compact">
+        <!-- Abstract Background element -->
+        <div class="bg-blob blob-1"></div>
+
+        <div class="container w-full">
+            <div class="hero-grid">
+
+                <!-- Left Content -->
+                <div class="hero-content">
+                    <h2 class="hero-subtitle">
+                        Project Overview
+                    </h2>
+                    <h1 class="hero-title">
+                        Project <span class="text-purple">Scope</span>
+                    </h1>
+                    <p class="hero-desc">
+                        The Lavender AI project aims to develop an intelligent greenhouse management system that leverages artificial intelligence and IoT technologies to optimize lavender cultivation. Our system integrates real-time monitoring, automated control, and predictive analytics to improve crop yield and resource efficiency.
+                    </p>
+                </div>
+
+                <!-- Right Content (Mockup Image) -->
+                <div class="hero-image-wrap">
+                    <div class="hero-image-container">
+                        <!-- Behind image background circle -->
+                        <div class="hero-image-bg-circle"></div>
+
+                        <img class="floating-image" src="images/scope_hero.png" alt="AI Research Scope">
+
+                        <!-- Floating Decorative Stars -->
+                        <div class="decor-absolute decor-stars-1">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" />
+                            </svg>
+                        </div>
+                        <div class="decor-absolute decor-wavy">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 6c3-3 6-3 9 0s6 3 9 0M4 12c3-3 6-3 9 0s6 3 9 0M4 18c3-3 6-3 9 0s6 3 9 0" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Page Content -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <!-- Abstract Background Blobs -->
+        <div class="bg-blob blob-2" style="top: 20%;"></div>
+        <div class="bg-blob blob-3" style="bottom: 20%;"></div>
+        <div class="container">
+            <div class="features-card">
+
+                <!-- Section 1: Literature Survey -->
+                <div id="literature-survey" style="margin-bottom: 4rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div class="feature-icon-wrapper" style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                            <i class="ph ph-books" style="font-size: 32px;"></i>
+                        </div>
+                        <h2 class="section-title text-left" style="margin-bottom: 0;">Literature Survey</h2>
+                    </div>
+                    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="feature-item" style="align-items: flex-start; text-align: left; padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border);">
+                            <h3 class="detail-subtitle" style="margin-top: 0; color: #f59e0b;">Disease Detection</h3>
+                            <p class="feature-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                                Deep learning CNNs perform well in labs but fail in real fields. Existing systems lack real-time IoT camera integration, simultaneous disease/insect detection, and hardware-level alerts.
+                            </p>
+                        </div>
+                        <div class="feature-item" style="align-items: flex-start; text-align: left; padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border);">
+                            <h3 class="detail-subtitle" style="margin-top: 0; color: #f59e0b;">Climate Control</h3>
+                            <p class="feature-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                                Current IoT climate controllers rely on simple IF-ELSE hysteresis, causing temperature overshoots. No crop-specific closed-loop control exists for lavender's unique 22–28°C and 55–75% RH needs.
+                            </p>
+                        </div>
+                        <div class="feature-item" style="align-items: flex-start; text-align: left; padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border);">
+                            <h3 class="detail-subtitle" style="margin-top: 0; color: #f59e0b;">Nutrient & Irrigation</h3>
+                            <p class="feature-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                                Commercial EC sensors drift in greenhouse conditions. Vision-only systems cannot discriminate between N-Deficiency and N-Lockout as both present identical chlorosis symptoms.
+                            </p>
+                        </div>
+                        <div class="feature-item" style="align-items: flex-start; text-align: left; padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border);">
+                            <h3 class="detail-subtitle" style="margin-top: 0; color: #f59e0b;">Adaptive Lighting</h3>
+                            <p class="feature-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                                Commercial systems use fixed spectrums or static daily timers. They fail to adapt to real-time plant growth stages (Vegetative vs Flowering), wasting energy and reducing terpene yields.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Research Gap -->
+                <div id="research-gap" style="margin-bottom: 4rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div class="feature-icon-wrapper" style="background-color: rgba(239, 68, 68, 0.1); color: #ef4444;">
+                            <i class="ph ph-magnifying-glass" style="font-size: 32px;"></i>
+                        </div>
+                        <h2 class="section-title text-left" style="margin-bottom: 0;">Research Gap</h2>
+                    </div>
+                    <div style="overflow-x: auto; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border); padding: 1px;">
+                        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead>
+                                <tr style="background-color: rgba(239, 68, 68, 0.05); border-bottom: 1px solid var(--bg-card-border);">
+                                    <th style="padding: 1rem; font-weight: 600; color: var(--text-heading);">Domain</th>
+                                    <th style="padding: 1rem; font-weight: 600; color: var(--text-heading);">Gap</th>
+                                    <th style="padding: 1rem; font-weight: 600; color: var(--text-heading);">Proposed Solution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--bg-card-border);">
+                                    <td style="padding: 1rem; color: var(--text-base);">Disease detection</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">No real-time IoT camera + hardware actuation</td>
+                                    <td style="padding: 1rem; color: var(--text-base);">YOLOv8m + UDP alerts</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--bg-card-border);">
+                                    <td style="padding: 1rem; color: var(--text-base);">Climate control</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">No crop-specific closed-loop state-aware control</td>
+                                    <td style="padding: 1rem; color: var(--text-base);">Random Forest + feedback</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--bg-card-border);">
+                                    <td style="padding: 1rem; color: var(--text-base);">Nitrogen diagnosis</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">No affordable N-Burn + lockout discrimination</td>
+                                    <td style="padding: 1rem; color: var(--text-base);">MobileNetV3 + soil sensor</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--bg-card-border);">
+                                    <td style="padding: 1rem; color: var(--text-base);">Irrigation</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Fixed schedules, no adaptive nitrogen response</td>
+                                    <td style="padding: 1rem; color: var(--text-base);">Adaptive flush protocol</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1rem; color: var(--text-base);">Lighting</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">No vision-driven spectral adaptation</td>
+                                    <td style="padding: 1rem; color: var(--text-base);">VGG16 + LDR dimming</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Section 3: Research Objectives -->
+                <div id="research-objectives" style="margin-bottom: 4rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div class="feature-icon-wrapper" style="background-color: rgba(16, 185, 129, 0.1); color: var(--color-primary);">
+                            <i class="ph ph-target" style="font-size: 32px;"></i>
+                        </div>
+                        <h2 class="section-title text-left" style="margin-bottom: 0;">Research Objectives</h2>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;" class="feature-desc">
+                                <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: 700; font-size: 1.25rem;">1</span>
+                                Develop a unified AI-powered greenhouse management system integrating disease, climate, nutrient, and lighting control into a single architecture.
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;" class="feature-desc">
+                                <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: 700; font-size: 1.25rem;">2</span>
+                                Implement a YOLOv8m-based real-time detector for lavender disease and insects using ESP32-CAM live streams with a 10-frame stability buffer.
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;" class="feature-desc">
+                                <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: 700; font-size: 1.25rem;">3</span>
+                                Build a hybrid Random Forest climate controller for state-aware, closed-loop regulation of fan speeds and humidifiers.
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;" class="feature-desc">
+                                <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: 700; font-size: 1.25rem;">4</span>
+                                Deploy a MobileNetV3-Large network for 5-class nitrogen stress classification, crossing visual data with soil moisture readings.
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;" class="feature-desc">
+                                <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: 700; font-size: 1.25rem;">5</span>
+                                Integrate a VGG16-based adaptive lighting controller classifying 4 plant growth stages to adjust RGB LED spectra.
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;" class="feature-desc">
+                                <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: 700; font-size: 1.25rem;">6</span>
+                                Engineer a complete prototype ensuring total hardware costs remain under $40 per node.
+                            </li>
+                        </ul>
+                        <div style="text-align: center;">
+                            <img src="images/research_goals.png" alt="Research Objectives" style="max-width: 100%; border-radius: 1rem; filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.1));">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: Methodology -->
+                <div id="methodology" style="margin-bottom: 4rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div class="feature-icon-wrapper" style="background-color: rgba(59, 130, 246, 0.1); color: #3b82f6;">
+                            <i class="ph ph-git-merge" style="font-size: 32px;"></i>
+                        </div>
+                        <h2 class="section-title text-left" style="margin-bottom: 0;">Methodology (Architecture)</h2>
+                    </div>
+                    <p class="feature-desc" style="margin-bottom: 2rem;">
+                        The proposed system follows a four-layer architecture, ensuring seamless data flow from edge devices to the AI backend and out to user applications. The AI models (MobileNetV3, VGG16) were trained using a two-phase transfer learning approach.
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
+                        <div style="text-align: center;">
+                            <img src="images/architecture_diagram.png" alt="4-Layer Architecture Diagram" style="max-width: 100%; border-radius: 1rem; filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.1));">
+                        </div>
+                        
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border); border-left: 4px solid #3b82f6;">
+                                <h3 class="detail-subtitle" style="margin-top: 0; color: var(--text-heading);">1. Data Acquisition Layer</h3>
+                                <p class="feature-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                                    Sensing, imaging, and streaming via ESP32-CAM, DHT22, DS18B20, LDR, and capacitive soil moisture sensors.
+                                </p>
+                            </div>
+                            <div style="padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border); border-left: 4px solid #8b5cf6;">
+                                <h3 class="detail-subtitle" style="margin-top: 0; color: var(--text-heading);">2. Intelligence Layer</h3>
+                                <p class="feature-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                                    AI inference and decision-making driven by YOLOv8m (Detection), Random Forest (Climate), MobileNetV3 (Nitrogen), and VGG16 (Lighting).
+                                </p>
+                            </div>
+                            <div style="padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border); border-left: 4px solid #ec4899;">
+                                <h3 class="detail-subtitle" style="margin-top: 0; color: var(--text-heading);">3. Control Layer</h3>
+                                <p class="feature-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                                    Actuator command dispatch controlling the 12V DC fans, humidifiers, pump relays, RGB LEDs, and buzzer alerts.
+                                </p>
+                            </div>
+                            <div style="padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border); border-left: 4px solid #10b981;">
+                                <h3 class="detail-subtitle" style="margin-top: 0; color: var(--text-heading);">4. Application Layer</h3>
+                                <p class="feature-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                                    User interaction and persistence managed through a cross-platform Flutter app, Flask API, and Firebase Firestore.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5: Technologies -->
+                <div id="technologies">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div class="feature-icon-wrapper" style="background-color: rgba(236, 72, 153, 0.1); color: #ec4899;">
+                            <i class="ph ph-cpu" style="font-size: 32px;"></i>
+                        </div>
+                        <h2 class="section-title text-left" style="margin-bottom: 0;">Technologies</h2>
+                    </div>
+                    
+                    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        
+                        <!-- AI & Software -->
+                        <div style="padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border);">
+                            <h3 class="detail-subtitle" style="margin-top: 0; border-bottom: 1px solid var(--bg-card-border); padding-bottom: 0.5rem;">AI Models & Software</h3>
+                            <ul style="list-style: none; padding: 0; margin: 1rem 0 0 0;">
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>YOLOv8m:</strong> Real-time Object Detection</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>MobileNetV3:</strong> Image Classification</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>VGG16:</strong> Image Classification</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>Random Forest:</strong> Regression & Classification</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>Flask REST API:</strong> Backend Server</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>Firebase Firestore:</strong> Database</li>
+                                <li style="color: var(--text-muted);"><strong>Flutter:</strong> Cross-platform Application</li>
+                            </ul>
+                        </div>
+
+                        <!-- Hardware -->
+                        <div style="padding: 1.5rem; background-color: var(--bg-body); border-radius: 1rem; border: 1px solid var(--bg-card-border);">
+                            <h3 class="detail-subtitle" style="margin-top: 0; border-bottom: 1px solid var(--bg-card-border); padding-bottom: 0.5rem;">Hardware Components</h3>
+                            <ul style="list-style: none; padding: 0; margin: 1rem 0 0 0;">
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>ESP32-CAM:</strong> Microcontroller with OV2640</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>ESP32 DevKit V1:</strong> Secondary Control Node</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>DHT22:</strong> Air Temp & Humidity</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>DS18B20:</strong> Soil Temperature</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>Capacitive v2.0:</strong> Soil Moisture</li>
+                                <li style="margin-bottom: 0.5rem; color: var(--text-muted);"><strong>LDR:</strong> Ambient Light Sensor</li>
+                                <li style="color: var(--text-muted);"><strong>L298N & Relays:</strong> Motor and Pump Drivers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                                <div class="footer-grid">
+                    <!-- Brand Column -->
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <span class="logo-text">Lavender AI</span>
+                            <div>
+                                <img src="images/logo-icon.png" alt="Lavender AI Logo" style="height: 2rem;">
+                            </div>
+                        </div>
+                        <p class="footer-desc">
+                            An AI-Driven Hybrid Smart Eco-Greenhouse System for Precision Lavender Cultivation and Premium Essential Oil Production.
+                        </p>
+                    </div>
+
+                    <!-- Links Column 1 -->
+                    <div class="footer-links">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <a href="index.html">Home</a>
+                        <a href="project-scope.html">Project Scope</a>
+                        <a href="milestones.html">Milestones</a>
+                        <a href="downloads.html">Downloads</a>
+                    </div>
+
+                    <!-- Links Column 2 -->
+                    <div class="footer-links">
+                        <h4 class="footer-heading">About</h4>
+                        <a href="about-us.html">Our Team</a>
+                        <a href="about-us.html">Supervisors</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+
+                    <!-- Contact Info Column -->
+                    <div class="footer-links">
+                        <h4 class="footer-heading">Contact Info</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="ph-fill ph-envelope" style="color: var(--color-primary); font-size: 1.125rem;"></i>
+                                info@lavenderai.com
+                            </p>
+                            <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="ph-fill ph-phone" style="color: var(--color-primary); font-size: 1.125rem;"></i>
+                                +94 11 234 5678
+                            </p>
+                            <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="ph-fill ph-map-pin" style="color: var(--color-primary); font-size: 1.125rem;"></i>
+                                SLIIT, Malabe, Sri Lanka
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p style="margin: 0; text-align: center; width: 100%;">&copy; 2026 Lavender AI. All rights reserved.</p>
+                </div>
+            </div>
+
+            <!-- Scroll to top -->
+            <a href="#" class="scroll-top" aria-label="Scroll to top"
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                <i class="ph-bold ph-caret-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
